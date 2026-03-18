@@ -44,3 +44,24 @@ def log_session_summary(session_data, user_name):
             f.write(summary_line)
     except Exception as e:
         console.print(f"[red]Error writing to log file: {e}[/]")
+
+
+
+# ... existing code ...
+
+def display_analytics(user_name, session_history=None, leaderboard=None):
+    """Displays analytics from current session history or persisted leaderboard."""
+    data = session_history or leaderboard or []
+
+    if not data:
+        console.print(f"[yellow]No session data available for analytics, {user_name}.[/]")
+        return
+
+    total_sessions = len(data)
+    total_duration = sum(s["duration"] for s in data)
+    avg_score = sum(s["score"] for s in data) / total_sessions
+
+    console.print(f"[bold green]Analytics for {user_name}:[/]")
+    console.print(f"Total Sessions: {total_sessions}")
+    console.print(f"Total Duration: {total_duration} min")
+    console.print(f"Average Focus Score: {avg_score:.1f}")

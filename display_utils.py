@@ -1,3 +1,4 @@
+
 from rich.console import Console
 from rich.table import Table
 
@@ -28,17 +29,21 @@ def display_leaderboard(user_name, leaderboard):
             style=row_style
         )
     console.print(table)
-    console.print(f"[blue]Keep shining, {user_name}! Groggytimer’s here to help you excel! 🌟[/]\n")
+    console.print(f"[blue]Keep shining, {user_name}! Groggytimer's here to help you excel! 🌟[/]\n")
 
 
-def display_analytics(user_name, session_history):
-    """Displays simple analytics from session history."""
-    if not session_history:
+def display_analytics(user_name, session_history=None, leaderboard=None):
+    """Displays analytics from current session history or persisted leaderboard."""
+    data = session_history or leaderboard or []
+
+    if not data:
         console.print(f"[yellow]No session data available for analytics, {user_name}.[/]")
         return
-    total_sessions = len(session_history)
-    total_duration = sum(s["duration"] for s in session_history)
-    avg_score = sum(s["score"] for s in session_history) / total_sessions
+
+    total_sessions = len(data)
+    total_duration = sum(s["duration"] for s in data)
+    avg_score = sum(s["score"] for s in data) / total_sessions
+
     console.print(f"[bold green]Analytics for {user_name}:[/]")
     console.print(f"Total Sessions: {total_sessions}")
     console.print(f"Total Duration: {total_duration} min")

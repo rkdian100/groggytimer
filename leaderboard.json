@@ -5,5 +5,33 @@
         "distractions": 0,
         "score": 1,
         "timestamp": "2026-03-17T22:35:06.957257"
+    },
+    {
+        "task": "TRIAL 2",
+        "duration": 5,
+        "distractions": 0,
+        "score": 5,
+        "timestamp": "2026-03-18T12:34:20.017686"
+    },
+    {
+        "task": "no",
+        "duration": 1,
+        "distractions": 0,
+        "score": 1,
+        "timestamp": "2026-03-18T12:36:01.710688"
+    },
+    {
+        "task": "Code",
+        "duration": 2,
+        "distractions": 0,
+        "score": 2,
+        "timestamp": "2026-03-18T12:59:05.643625"
+    },
+    {
+        "task": "Check the Grn Entry UI Enhancement",
+        "duration": 10,
+        "distractions": 0,
+        "score": 10,
+        "timestamp": "2026-03-18T16:23:32.107609"
     }
 ]
