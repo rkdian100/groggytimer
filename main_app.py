@@ -24,6 +24,8 @@ def main():
             data = sessions.run_pomodoro_session(user_name)
         elif choice == "3":
             display_utils.display_analytics(user_name, session_history, persistence.leaderboard)
+            display_utils.display_leaderboard(user_name, persistence.leaderboard)
+
             continue
         elif choice == "4":
             break

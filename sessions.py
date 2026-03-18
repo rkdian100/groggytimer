@@ -15,6 +15,7 @@ import quotes
 import persistence
 import display_utils
 
+
 console = Console()
 
 def run_focus_session(user_name):
@@ -49,7 +50,7 @@ def run_focus_session(user_name):
         distraction_count += 1
         console.print("[yellow]Distraction logged![/]")
 
-    hotkey_id = keyboard.add_hotkey('d', log_distraction)
+    hotkey_id = keyboard.add_hotkey('9', log_distraction)
 
     start_time = time.time()
 

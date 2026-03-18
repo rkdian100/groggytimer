@@ -33,5 +33,12 @@
         "distractions": 0,
         "score": 10,
         "timestamp": "2026-03-18T16:23:32.107609"
+    },
+    {
+        "task": "Check9",
+        "duration": 2,
+        "distractions": 1,
+        "score": 0,
+        "timestamp": "2026-03-18T22:18:12.986919"
     }
 ]
