@@ -1,3 +1,4 @@
+
 import time
 import random
 import keyboard
@@ -24,6 +25,7 @@ def run_focus_session(user_name):
     distraction_count = 0
     task_name = console.input(
         f"[bold green]Hi {user_name}, what task would you like to focus on today? [/]"
+        f"[yellow](Press '9' to log a distraction)[/]"
     )
 
     while True:
@@ -91,14 +93,31 @@ def run_pomodoro_session(user_name):
     work_duration = 25
     break_duration = 5
 
-    console.print("[green]Pomodoro started[/]")
+    def run_phase(label: str, color: str, duration_minutes: int):
+        total_seconds = duration_minutes * 60
 
-    time.sleep(work_duration * 60)
+        progress = Progress(
+            "[progress.description]{task.description}",
+            BarColumn(),
+            "[progress.percentage]{task.percentage:>3.0f}%",
+            TimeRemainingColumn(),
+            TimeElapsedColumn(),
+        )
+        task = progress.add_task(f"[{color}]{label}[/]", total=total_seconds)
+        start_time = time.time()
 
-    console.print("[cyan]Break time[/]")
-    time.sleep(break_duration * 60)
+        with Live(progress, refresh_per_second=4):
+            while not progress.finished:
+                elapsed = time.time() - start_time
+                progress.update(task, completed=elapsed)
+                time.sleep(0.1)
 
-    focus_score = utils.calculate_focus_score(work_duration, 0)
+    console.print("[green]Pomodoro started! 🍅[/]")
+    run_phase("Focus", "green", work_duration)
+
+    console.print("[cyan]Break time! ☕[/]")
+    run_phase("Break", "cyan", break_duration)
+
 
     session_entry = {
         "task": "Pomodoro",

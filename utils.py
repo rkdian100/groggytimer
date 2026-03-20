@@ -21,8 +21,8 @@ def format_seconds(seconds):
 
 
 def calculate_focus_score(duration_minutes, distractions):
-    """Calculates focus score: duration minus 2 points per distraction."""
-    return max(0, duration_minutes - (distractions * 2))
+    """Calculates focus score: duration minus 1 points per distraction."""
+    return max(0, duration_minutes - (distractions * 1))
 
 
 def play_beep(frequency, duration):

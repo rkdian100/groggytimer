@@ -40,5 +40,12 @@
         "distractions": 1,
         "score": 0,
         "timestamp": "2026-03-18T22:18:12.986919"
+    },
+    {
+        "task": "Log bugs ",
+        "duration": 10,
+        "distractions": 1,
+        "score": 8,
+        "timestamp": "2026-03-19T11:17:46.856100"
     }
 ]
