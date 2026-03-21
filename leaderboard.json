@@ -47,5 +47,19 @@
         "distractions": 1,
         "score": 8,
         "timestamp": "2026-03-19T11:17:46.856100"
+    },
+    {
+        "task": "Pomodoro",
+        "duration": 1,
+        "distractions": 0,
+        "score": 1,
+        "timestamp": "2026-03-21T11:43:07.122147"
+    },
+    {
+        "task": "Check the files",
+        "duration": 5,
+        "distractions": 0,
+        "score": 5,
+        "timestamp": "2026-03-21T11:52:23.987255"
     }
 ]

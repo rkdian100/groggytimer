@@ -90,8 +90,8 @@ def run_focus_session(user_name):
 
 
 def run_pomodoro_session(user_name):
-    work_duration = 25
-    break_duration = 5
+    work_duration = 1
+    break_duration = 1
 
     def run_phase(label: str, color: str, duration_minutes: int):
         total_seconds = duration_minutes * 60
@@ -115,9 +115,11 @@ def run_pomodoro_session(user_name):
     console.print("[green]Pomodoro started! 🍅[/]")
     run_phase("Focus", "green", work_duration)
 
+
     console.print("[cyan]Break time! ☕[/]")
     run_phase("Break", "cyan", break_duration)
 
+    focus_score = utils.calculate_focus_score(work_duration, 0)
 
     session_entry = {
         "task": "Pomodoro",
