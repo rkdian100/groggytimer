@@ -61,5 +61,19 @@
         "distractions": 0,
         "score": 5,
         "timestamp": "2026-03-21T11:52:23.987255"
+    },
+    {
+        "task": "Automate the boring stuff with python",
+        "duration": 10,
+        "distractions": 0,
+        "score": 10,
+        "timestamp": "2026-03-21T14:40:03.618940"
+    },
+    {
+        "task": "Pomodoro",
+        "duration": 1,
+        "distractions": 0,
+        "score": 1,
+        "timestamp": "2026-03-21T14:59:57.736677"
     }
 ]

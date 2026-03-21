@@ -61,7 +61,7 @@ def run_focus_session(user_name):
             elapsed = time.time() - start_time
             progress.update(task, completed=elapsed)
 
-            if keyboard.is_pressed('q'):
+            if keyboard.is_pressed('q') or keyboard.is_pressed('esc'):
                 console.print("[red]Session aborted[/]")
                 keyboard.remove_hotkey(hotkey_id)
                 return None
@@ -90,8 +90,8 @@ def run_focus_session(user_name):
 
 
 def run_pomodoro_session(user_name):
-    work_duration = 1
-    break_duration = 1
+    work_duration = 25
+    break_duration = 5
 
     def run_phase(label: str, color: str, duration_minutes: int):
         total_seconds = duration_minutes * 60

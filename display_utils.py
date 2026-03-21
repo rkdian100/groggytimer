@@ -5,7 +5,7 @@ from rich.table import Table
 console = Console()
 
 def display_leaderboard(user_name, leaderboard):
-    """Displays the top 5 sessions from the persistent leaderboard."""
+    """Displays the top 10 sessions from the persistent leaderboard."""
     if not leaderboard:
         console.print(f"[yellow]No sessions yet, {user_name}! Start building your productivity legacy! 📈[/]")
         return
