@@ -10,7 +10,7 @@ def display_leaderboard(user_name, leaderboard):
         console.print(f"[yellow]No sessions yet, {user_name}! Start building your productivity legacy! 📈[/]")
         return
     sorted_board = sorted(leaderboard, key=lambda x: x["score"], reverse=True)
-    top_5 = sorted_board[:5]
+    top_10 = sorted_board[:10]
     console.print(f"[bold blue]=== 🏆 {user_name}'s Productivity Leaderboard with Groggytimer 🏆 ===[/]")
     table = Table(title="", style="bright_magenta", title_style="bold green")
     table.add_column("Rank", justify="center", style="cyan", no_wrap=True)
@@ -18,7 +18,7 @@ def display_leaderboard(user_name, leaderboard):
     table.add_column("Duration", justify="center", style="yellow", no_wrap=True)
     table.add_column("Distractions", justify="center", style="red", no_wrap=True)
     table.add_column("Focus Score", justify="center", style="bold white", no_wrap=True)
-    for i, session in enumerate(top_5, 1):
+    for i, session in enumerate(top_10, 1):
         row_style = "bold green" if i == 1 else ""
         table.add_row(
             str(i),
